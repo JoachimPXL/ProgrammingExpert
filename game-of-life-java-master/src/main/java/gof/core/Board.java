@@ -109,10 +109,13 @@ public class Board {
         for (int height=0; height<grid.length; height++){
             for (int width=0; width<grid[height].length; width++){
                 int nr = neighboursCountAt(height,width);
-                if (nr < 2) { grid[height][width].setNewState(false);}  //underpop
-                else if (nr > 3) { grid[height][width].setNewState(false);} //overcrowd
+                // used to be like this.
+                //if (nr < 2) { grid[height][width].setNewState(false);}
+                //else if (nr > 3) { grid[height][width].setNewState(false);} //overcrowd
+                // For better performance
+                if (nr < 2 || nr > 3) { grid[height][width].setNewState(false); }
                 else if (nr == 3) { grid[height][width].setNewState(true);} //born
-                else if (nr == 2) { grid[height][width].setNewState(grid[height][width].getState());} // stay same
+                else if (nr == 2) { grid[height][width].setNewState(grid[height][width].getState());} // stay s
             }
         }
     }

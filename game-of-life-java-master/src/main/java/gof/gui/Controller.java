@@ -1,10 +1,8 @@
 package gof.gui;
 
 import gof.core.Board;
-
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
